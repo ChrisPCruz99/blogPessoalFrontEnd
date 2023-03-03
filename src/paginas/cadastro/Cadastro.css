@@ -1,15 +1,14 @@
-.txts {
+.txts2 {
     font-weight: bold !important;
 }
 
-.text-decorator-none {
+.text-decorator-none1 {
     text-decoration: none;
 }
 
-.img {
+.img1 {
     background-image: url(https://imgur.com/XMgQgBf.jpg);
     background-repeat: no-reapet;
-    width: 100vh;
     min-height: 90vh;
     background-size: cover;
     background-position: center;

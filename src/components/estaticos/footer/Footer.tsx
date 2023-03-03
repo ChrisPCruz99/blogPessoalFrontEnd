@@ -15,7 +15,7 @@ function Footer() {
         justifyContent="center"
         alignItems="center"
       >
-        <Grid alignItems="center" item xs={12}>
+        <Grid alignItems="flex-start" item xs={12}>
           <Box className="box1">
             <Box
               paddingTop={1}

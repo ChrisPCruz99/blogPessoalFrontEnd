@@ -15,7 +15,7 @@ function Home() {
           </Box>  
           <Box display="flex" justifyContent="center">
             <Box marginRight={1}></Box>
-            <Button className="botao" variant="outlined"> Ver Postagens </Button>
+            <Button className="botao" variant="outlined"> Ver Postagens   </Button>
           </Box>
         </Grid>
 

@@ -7,8 +7,9 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <>
-      <AppBar position="static">
-        <Toolbar variant="dense">
+
+      <AppBar className="barra" position="relative">
+        <Toolbar variant="regular">
           <Box className="cursor">
             <Typography variant="h5" color="inherit">
               BlogPessoal
@@ -19,35 +20,36 @@ function Navbar() {
             <Box mx={1}  className="cursor">
               <Link to="/home" className="text-decorator-none">
                 <Typography variant="h6" color="inherit">
-                  home
+                  Home
                 </Typography>
               </Link>
             </Box>
             <Box mx={1}  className="cursor">
               <Typography variant="h6" color="inherit">
-                postagens
+                Postagens
               </Typography>
             </Box>
             <Box mx={1}  className="cursor">
               <Typography variant="h6" color="inherit">
-                temas
+                Temas
               </Typography>
             </Box>
             <Box mx={1}  className="cursor">
               <Typography variant="h6" color="inherit">
-                cadastrar tema
+                Cadastrar tema
               </Typography>
             </Box>
             <Box mx={1}  className="cursor">
               <Link to="/login" className="text-decorator-none">
-                <Typography variant="h6" color="inherit">
-                  logout
+                <Typography variant="h6" color="inherit" style={{display:"flex", alignItems: "end", justifyContent: "end", textAlign: "end"}}>
+                  Logout
                 </Typography>
               </Link>
             </Box>
           </Box>
         </Toolbar>
       </AppBar>
+
     </>
   );
 }
