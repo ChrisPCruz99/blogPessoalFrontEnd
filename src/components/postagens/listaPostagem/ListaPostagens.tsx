@@ -7,7 +7,7 @@ import { Box } from "@mui/material";
 import { Typography, Button, Card, CardActions, CardContent } from "@material-ui/core";
 import Postagem from "../../../models/Postagem";
 
-function ListaPostagem() {
+function ListaPostagens() {
   const [posts, setPosts] = useState<Postagem[]>([]);
   const [token, setToken] = useLocalStorage("token");
   let navigate = useNavigate();
