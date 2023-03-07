@@ -5,10 +5,10 @@ import Usuario from '../../models/Usuario';
 import { cadastroUsuario } from "../../services/Service";
 import { Link, useNavigate } from "react-router-dom";
 import useLocalStorage from 'react-use-localstorage';
-import "./Cadastro.css";
+import "./UsuarioCadastro.css";
 import UsuarioLogin from "../../models/UsuarioLogin";
 
-function Cadastro() {
+function UsuarioCadastro() {
     
     let navigate = useNavigate();
     const [confirmarSenha,setConfirmarSenha] = useState<String>("")
@@ -81,4 +81,4 @@ function Cadastro() {
     );
 }
 
-export default Cadastro;
+export default UsuarioCadastro;
