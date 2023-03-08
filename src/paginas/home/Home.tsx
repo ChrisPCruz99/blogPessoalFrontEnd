@@ -1,22 +1,40 @@
+import React, { useEffect } from "react";
 import { Paper, Button, Grid, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
-import React from "react";
+import { Link } from "react-router-dom";
+import ModalPostagem from "../../components/postagens/modalPostagem/ModalPostagens";
 import TabPostagens from "../../components/postagens/tabPostagem/TabPostagens";
 import "./Home.css";
+import {useNavigate } from 'react-router-dom'
+import useLocalStorage from 'react-use-localstorage';
+
 
 function Home() {
+  let navigate = useNavigate();
+  const [token, setToken] = useLocalStorage('token');
+
+  useEffect(() => {
+    if (token == "") {
+        alert("Você precisa estar logado")
+        navigate("/login")
+    }
+}, [token])
+
   return (
     <>
       <Grid container className="caixa" direction="row" justifyContent="center" alignItems="center">
         <Grid alignItems="center" item xs={6}>
           <Box paddingX={20}>
-            <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" className="titulo">Seja bem vindo(a)!
-            </Typography>
+            <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" className="titulo">Seja bem vindo(a)!</Typography>
             <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className="titulo">expresse aqui os seus pensamentos e opiniões!</Typography>
           </Box>  
           <Box display="flex" justifyContent="center">
-            <Box marginRight={1}></Box>
-            <Button className="botao" variant="outlined"> Ver Postagens   </Button>
+            <Box marginRight={1}>
+              <ModalPostagem />
+            </Box>
+            <Link to='/postagens' className="text-decorator-none">
+            <Button className="botao" variant="outlined"> Ver Postagens</Button>
+            </Link>
           </Box>
         </Grid>
 

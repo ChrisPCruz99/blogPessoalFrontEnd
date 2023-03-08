@@ -9,3 +9,7 @@
 .barra{
     background-color: #0f153f !important;
 }
+.botoes{
+    display: flex !important;
+    justify-content: space-between !;
+}

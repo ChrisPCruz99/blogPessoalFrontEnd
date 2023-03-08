@@ -5,7 +5,6 @@ import { TabContext, TabPanel } from '@material-ui/lab';
 import './TabPostagens.css';
 import ListaPostagens from '../listaPostagem/ListaPostagens';
 
-
 function TabPostagens() {
     const [value, setValue] = useState('1')
     function handleChange(event: React.ChangeEvent<{}>, newValue: string){
@@ -14,15 +13,16 @@ function TabPostagens() {
 
     return (
         <>
-          <TabContext value={value}>
-            <AppBar position="static">
-              <Tabs centered indicatorColor="secondary" onChange={handleChange}>
-                <Tab label="Todas as postagens" value="1"/>
+        
+          <TabContext value={value} >
+            <AppBar position="static" >
+              <Tabs centered  indicatorColor="secondary" onChange={handleChange}>
+                <Tab  label="Todas as postagens" value="1"/>
                 <Tab className="painel" label="Sobre-nós" value="2" />
               </Tabs>
             </AppBar>
-            <TabPanel value="1" >
-              <Box display="flex" flexWrap="wrap" justifyContent="center">
+            <TabPanel value="1">
+              <Box display="flex" flexWrap="wrap" justifyContent="start">
                 <ListaPostagens />
               </Box>
             </TabPanel>

@@ -34,7 +34,7 @@ function ListaPostagens() {
   return (
     <>
       {posts.map((post) => (
-        <Box m={2}>
+        <Box m={2} display="flex" justifyContent='start' >
           <Card variant="outlined">
             <CardContent>
               <Typography color="textSecondary" gutterBottom>
@@ -45,6 +45,9 @@ function ListaPostagens() {
               </Typography>
               <Typography variant="body2" component="p">
                 {post.texto}
+              </Typography>
+              <Typography variant="body2" component="p">
+                Postado em: {new Intl.DateTimeFormat('pt-BR',{dateStyle: 'short', timeStyle:'medium'}).format(new Date(post.date))}
               </Typography>
               <Typography variant="body2" component="p">
                 {post.tema?.descricao}

@@ -19,13 +19,14 @@ function Navbar() {
 
       <AppBar className="barra" position="relative">
         <Toolbar variant="regular">
+          <Box display='flex' justifyContent='space-between' width={'100%'}>
           <Box className="cursor">
             <Typography variant="h5" color="inherit">
               BlogPessoal
             </Typography>
           </Box>
 
-          <Box display="flex" justifyContent="start">
+          <Box display="flex" justifyContent="start" gap="5px">
             <Box mx={1}  className="cursor">
               <Link to="/home" className="text-decorator-none">
                 <Typography variant="h6" color="inherit">
@@ -55,10 +56,11 @@ function Navbar() {
               </Link>
             </Box>
             <Box mx={1}  className="cursor" onClick={goLogout}>
-                <Typography variant="h6" color="inherit" style={{display:"flex", alignItems: "end", justifyContent: "end", textAlign: "end"}}>
+                <Typography variant="h6" color="inherit" >
                   Logout
                 </Typography>
             </Box>
+          </Box>
           </Box>
         </Toolbar>
       </AppBar>
