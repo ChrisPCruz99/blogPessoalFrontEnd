@@ -12,11 +12,15 @@ import useLocalStorage from "react-use-localstorage";
 import { buscaId, deleteId } from "../../../services/Service";
 import "./DeletarTema.css";
 import Tema from "../../../models/Tema";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/TokensReducer";
 
 function DeletarTema() {
     let navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
-    const [token, setToken] = useLocalStorage("token");
+    const token = useSelector<TokenState, TokenState['token']>(
+        (state)=>state.token
+      );
     const [tema, setTema] = useState<Tema>();
 
     useEffect(() => {

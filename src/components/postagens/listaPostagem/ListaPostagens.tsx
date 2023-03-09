@@ -6,10 +6,14 @@ import { useNavigate, Link } from "react-router-dom";
 import { Box } from "@mui/material";
 import { Typography, Button, Card, CardActions, CardContent } from "@material-ui/core";
 import Postagem from "../../../models/Postagem";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/TokensReducer";
 
 function ListaPostagens() {
   const [posts, setPosts] = useState<Postagem[]>([]);
-  const [token, setToken] = useLocalStorage("token");
+  const token = useSelector<TokenState, TokenState['token']>(
+    (state)=>state.token
+  );
   let navigate = useNavigate();
 
   async function getPost() {
@@ -34,7 +38,7 @@ function ListaPostagens() {
   return (
     <>
       {posts.map((post) => (
-        <Box m={2} display="flex" justifyContent='start' >
+        <Box m={2} display="flex" justifyContent='center' >
           <Card variant="outlined">
             <CardContent>
               <Typography color="textSecondary" gutterBottom>

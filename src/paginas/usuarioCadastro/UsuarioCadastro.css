@@ -9,7 +9,7 @@
 .img1 {
     background-image: url(https://imgur.com/XMgQgBf.jpg);
     background-repeat: no-reapet;
-    min-height: 90vh;
+    min-height: 100vh;
     background-size: cover;
     background-position: center;
 }

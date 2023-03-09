@@ -12,11 +12,14 @@ import UsuarioCadastro from './paginas/usuarioCadastro/UsuarioCadastro';
 import DeletarTema from './components/temas/deletarTema/DeletarTema';
 import CadastroPostagens from './components/postagens/cadastroPostagens/CadastroPostagens';
 import DeletarPostagens from './components/postagens/deletarPostagem/DeletarPostagens';
+import { Provider } from 'react-redux';
+import store from './store/Store';
 
 
 function App() {
   return (
-    <Router>
+    <Provider store={store}>
+          <Router>
       <Navbar />
     <div style={{minHeight: '70vh'}}>
       <Routes>
@@ -37,6 +40,7 @@ function App() {
     </div>
       <Footer />
     </Router>
+    </Provider>
   );  
 }
 
