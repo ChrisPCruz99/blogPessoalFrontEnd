@@ -8,6 +8,7 @@ import Tema from '../../../models/Tema';
 import Postagem from '../../../models/Postagem';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/TokensReducer';
+import { toast } from 'react-toastify';
 
 function CadastroPostagens() {
     let navigate = useNavigate();
@@ -20,7 +21,9 @@ function CadastroPostagens() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.warn('Você precisa estar logado', {
+                theme: "colored",
+            });
             navigate("/login")
 
         }
@@ -88,14 +91,18 @@ function CadastroPostagens() {
                     'Authorization': token
                 }
             })
-            alert('Postagem atualizada com sucesso');
+            toast.success('Postagem atualizada com sucesso',{
+                theme: "colored"
+            });
         } else {
             post(`/postagens`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Postagem cadastrada com sucesso');
+            toast.success('Postagem atualizada com sucesso',{
+                theme: "colored"
+            });
         }
         back()
 

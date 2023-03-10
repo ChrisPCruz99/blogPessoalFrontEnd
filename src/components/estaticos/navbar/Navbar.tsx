@@ -6,6 +6,7 @@ import "./Navbar.css";
 import { useSelector, useDispatch } from 'react-redux';
 import { TokenState } from "../../../store/tokens/TokensReducer";
 import { addToken } from '../../../store/tokens/Action';
+import { toast } from 'react-toastify';
 
 
 function Navbar() {
@@ -17,7 +18,10 @@ function Navbar() {
 
   function goLogout(){
     dispatch(addToken(''));
-    alert("Usuário deslogado")
+    toast.success("Usuário deslogado",{
+      theme:'colored'
+    })
+
     navigate('/login')
 }
 

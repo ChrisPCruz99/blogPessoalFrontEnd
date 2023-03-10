@@ -8,6 +8,7 @@ import { Typography, Button, Card, CardActions, CardContent } from "@material-ui
 import Postagem from "../../../models/Postagem";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/TokensReducer";
+import { toast } from 'react-toastify';
 
 function ListaPostagens() {
   const [posts, setPosts] = useState<Postagem[]>([]);
@@ -26,7 +27,9 @@ function ListaPostagens() {
 
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa estar logado");
+      toast.warn('Você precisa estar logado', {
+        theme: "colored",
+    });
       navigate("/login");
     }
   }, [token]);
@@ -38,8 +41,8 @@ function ListaPostagens() {
   return (
     <>
       {posts.map((post) => (
-        <Box m={2} display="flex" justifyContent='center' >
-          <Card variant="outlined">
+        <Box m={2} height={'35vh'} width={'45vw'} >
+          <Card  variant="outlined">
             <CardContent>
               <Typography color="textSecondary" gutterBottom>
                 Postagens

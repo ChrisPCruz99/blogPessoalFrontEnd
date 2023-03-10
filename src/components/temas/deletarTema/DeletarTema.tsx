@@ -14,6 +14,7 @@ import "./DeletarTema.css";
 import Tema from "../../../models/Tema";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/TokensReducer";
+import { toast } from 'react-toastify';
 
 function DeletarTema() {
     let navigate = useNavigate();
@@ -25,7 +26,9 @@ function DeletarTema() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado");
+            toast.warn('Você precisa estar logado', {
+                theme: "colored",
+            });
             navigate("/login");
         }
     }, [token]);
@@ -51,7 +54,9 @@ function DeletarTema() {
                 Authorization: token,
             },
         });
-        alert("Tema deletado com sucesso");
+        toast.success("Tema deletado com sucesso",{
+            theme: "colored",
+        });
     }
 
     function nao() {
