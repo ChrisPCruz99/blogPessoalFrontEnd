@@ -18,7 +18,7 @@ function Navbar() {
 
   function goLogout(){
     dispatch(addToken(''));
-    toast.success("Usuário deslogado",{
+    toast.info("Usuário deslogado",{
       theme:'colored'
     })
 
