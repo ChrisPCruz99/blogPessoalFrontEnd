@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ListaPostagens.css";
 import { busca } from "../../../services/Service";
-import useLocalStorage from "react-use-localstorage";
 import { useNavigate, Link } from "react-router-dom";
 import { Box } from "@mui/material";
 import { Typography, Button, Card, CardActions, CardContent } from "@material-ui/core";

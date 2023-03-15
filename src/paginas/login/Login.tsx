@@ -2,10 +2,9 @@ import React, { ChangeEvent, useState, useEffect } from "react";
 import { Grid, Typography, TextField, Button } from "@material-ui/core";
 import { Box } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import useLocalStorage from 'react-use-localstorage';
-import { login } from "../../services/Service";
-import UsuarioLogin from "../../models/UsuarioLogin";
 import "./Login.css";
+import UsuarioLogin from "../../models/UsuarioLogin";
+import { login } from "../../services/Service";
 import { useDispatch } from "react-redux";
 import { addToken } from "../../store/tokens/Action";
 import { toast } from "react-toastify";
@@ -34,7 +33,7 @@ function Login() {
   useEffect(()=>{
     if(token != ''){
       dispatch(addToken(token))
-      navigate('/home')
+      navigate('/home');
     }
   }, [token])
 
@@ -51,7 +50,6 @@ function Login() {
       })
     }
   }
-
   return (
     <Grid container direction="row" justifyContent="center" alignItems="center">
       <Grid xs={6} alignItems="center">
@@ -89,11 +87,9 @@ function Login() {
               fullWidth
             />
             <Box marginTop={2} textAlign="center">
-
                 <Button type="submit" variant="contained" color="primary">
                   Logar
                 </Button>
-
             </Box>
           </form>
           <Box display='flex' justifyContent='center' marginTop={2}>

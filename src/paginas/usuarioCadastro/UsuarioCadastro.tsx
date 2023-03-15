@@ -4,10 +4,10 @@ import { Box } from "@mui/material";
 import Usuario from '../../models/Usuario';
 import { cadastroUsuario } from "../../services/Service";
 import { Link, useNavigate } from "react-router-dom";
-import useLocalStorage from 'react-use-localstorage';
 import "./UsuarioCadastro.css";
 import UsuarioLogin from "../../models/UsuarioLogin";
 import { toast } from 'react-toastify';
+
 
 function UsuarioCadastro() {
     
@@ -40,25 +40,29 @@ function UsuarioCadastro() {
 
 
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
-
         setUser({
             ...user,
             [e.target.name]: e.target.value
-        })
+        });
 
     }
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if(confirmarSenha == user.senha){
-        cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-        toast.success('Usuario cadastrado com sucesso', {
-            theme: "colored",
-
+        try {
+            if (confirmarSenha === user.senha && confirmarSenha != "") {
+                await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult);
+                toast.success("Usuario cadastrado com sucesso",{
+                    theme: "colored"
+                });
+            } else {
+                toast.error("As senhas não conferem.",{
+                    theme: 'colored'
+                });
+            }
+        } catch {
+            toast.warn("Dados inconsistentes. Favor verificar as informações de cadastro.",{
+                theme: 'colored'
             });
-        }else{
-             toast.error('Dados inconsistentes. Favor verificar as informações de cadastro.',{
-                theme:'colored'
-             });
         }
     }
     return (
