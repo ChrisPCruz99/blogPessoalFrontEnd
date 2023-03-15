@@ -6,7 +6,6 @@ import ModalPostagem from "../../components/postagens/modalPostagem/ModalPostage
 import TabPostagens from "../../components/postagens/tabPostagem/TabPostagens";
 import "./Home.css";
 import {useNavigate } from 'react-router-dom'
-import useLocalStorage from 'react-use-localstorage';
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/TokensReducer";
 import { toast } from 'react-toastify';
