@@ -1,0 +1,15 @@
+.txts2 {
+    font-weight: bold !important;
+}
+
+.text-decorator-none1 {
+    text-decoration: none;
+}
+
+.img1 {
+    background-image: url(https://imgur.com/XMgQgBf.jpg);
+    background-repeat: no-reapet;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
